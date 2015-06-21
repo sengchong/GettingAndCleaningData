@@ -70,8 +70,8 @@ name.activities = function(df)
 {
   colnames(df) <- "activity"
   df$activity[df$activity == 1] = "walking"
-  df$activity[df$activity == 2] = "walkingupstairs"
-  df$activity[df$activity == 3] = "walkingdownstairs"
+  df$activity[df$activity == 2] = "walking upstairs"
+  df$activity[df$activity == 3] = "walking downstairs"
   df$activity[df$activity == 4] = "sitting"
   df$activity[df$activity == 5] = "standing"
   df$activity[df$activity == 6] = "laying"
@@ -100,7 +100,5 @@ combined <- cbind(cx, cy, merged$subject)
 
 tidy <- generate.tidy.data(combined)
 
-write.csv(tidy, "UCI_HAR_tidy.csv", row.names=FALSE)
-
-
+write.table(tidy, "UCI_HAR_tidy.txt",row.names=FALSE) 
 
