@@ -16,7 +16,7 @@ download.data = function()
   if(!file.exists("data/UCI HAR Dataset"))
   {
     #download the data
-    fileURL <- "http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+    fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
     zipfile = "data/UCI_HAR_data"
     message("Downloading data")
     download.file(fileURL, destfile = zipfile, method = "auto")
@@ -69,12 +69,12 @@ extract.mean.and.std = function(df)
 name.activities = function(df)
 {
   colnames(df) <- "activity"
-  df$activity[df$activity == 1] = "Walking"
-  df$activity[df$activity == 2] = "Climbing_Upstairs"
-  df$activity[df$activity == 3] = "Climbing downstairs"
-  df$activity[df$activity == 4] = "Sitting"
-  df$activity[df$activity == 5] = "Standing"
-  df$activity[df$activity == 6] = "Laying"
+  df$activity[df$activity == 1] = "walking"
+  df$activity[df$activity == 2] = "walkingupstairs"
+  df$activity[df$activity == 3] = "walkingdownstairs"
+  df$activity[df$activity == 4] = "sitting"
+  df$activity[df$activity == 5] = "standing"
+  df$activity[df$activity == 6] = "laying"
   df
 }
 
